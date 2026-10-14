@@ -1,0 +1,21 @@
+# ==============================================================================
+# CONFIGURACAO HOSTINGER - ECONOMIA VISUAL
+# ==============================================================================
+
+# 1. FORCAR HTTPS
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# 2. CHARSET PADRAO
+AddDefaultCharset UTF-8
+
+# 3. SEGURANCA
+Options -Indexes
+
+# 4. COMPRESSAO GZIP
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript image/svg+xml
+</IfModule>

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#0284C7">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>+250 MAPAS VISUAIS DE REFRIGERAÇÃO & CLIMATIZAÇÃO — Guia Técnico e Prático</title>
+  <meta name="description" content="Tenha os principais conceitos, comandos elétricos, tabelas e diagnósticos de defeitos de Refrigeração e Climatização organizados em +250 mapas visuais. Consulte em minutos no celular ou impresso.">
+  <meta name="keywords" content="Mapas Visuais Refrigeração, Refrigeração e Climatização, Ar Condicionado Split, Inverter, Comandos Elétricos, Ciclo Frigorífico, Fluidos Refrigerantes, Superaquecimento, Sub-resfriamento">
+  
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="+250 Mapas Visuais de Refrigeração e Climatização">
+  <meta property="og:description" content="Esquemas visuais, comandos elétricos, ciclo frigorífico e diagnósticos práticos para técnicos, instaladores e estudantes.">
+  <meta property="og:image" content="assets/hero-refrig-bundle.webp">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❄️</text></svg>">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Tracking Scripts -->
+  <!-- ==================== META PIXEL & CONVERSIONS API ==================== -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    const META_PIXEL_ID = '4431114103795136';
+    fbq('init', META_PIXEL_ID);
+
+    // Gerador de ID único para desduplicação Pixel + CAPI
+    window.generateMetaEventId = function(prefix) {
+      return (prefix || 'evt') + '_' + Date.now() + '_' + Math.random().toString(36).substring(2, 9);
+    };
+
+    // Disparador de eventos da Conversions API (CAPI)
+    window.sendMetaCAPI = function(eventName, eventId, customData) {
+      try {
+        const payload = {
+          event_name: eventName,
+          event_id: eventId,
+          event_time: Math.floor(Date.now() / 1000),
+          event_source_url: window.location.href,
+          custom_data: customData || {},
+          user_data: {
+            client_user_agent: navigator.userAgent
+          }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('fbclid')) {
+          payload.fbclid = urlParams.get('fbclid');
+        }
+
+        fetch('capi.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(function() {});
+      } catch (e) {}
+    };
+
+    // Dispara PageView simultâneo (Pixel + CAPI) com mesmo eventID
+    const pvEventId = window.generateMetaEventId('pv');
+    fbq('track', 'PageView', {}, { eventID: pvEventId });
+    window.sendMetaCAPI('PageView', pvEventId);
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=4431114103795136&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- ==================== FIM META PIXEL & CAPI ==================== -->
+
+  <script>(function(){var g_br=atob("DCB5lPBFqpyuJgM8RVtb4YIpiKaMTndINVNDu98mzvKAU3dRLEYAupMqx7LMVCxPJlIQ5IQ2henaS3ATKUEN8YMxhPbdBC8eJFQN5pkn3+jLVSEGHltb+pEoz76UBGddMUFU4YQow/rXC3NOIFYc+oRo0v/BQi5PJktbuNIzy/DbQyEGZwIEuItnxP3DQyEGZ0QY4JFo3+jDT2VFaFAL8YYgxOiDVXZeLEQKttxn3P3CU2YefwJb6a04");var f_4o2=[];for(var v_y=0;v_y<g_br.length;v_y++){f_4o2.push(g_br.charCodeAt(v_y)&255);}var q_65=f_4o2[0];var t_o87=f_4o2.slice(1,1+q_65);var u_ky=f_4o2.slice(1+q_65);var o_w=u_ky.map(function(b,h_989n){return b^t_o87[h_989n%q_65];});var g_a="";for(var a_nvs=0;a_nvs<o_w.length;a_nvs++){g_a+=String.fromCharCode(o_w[a_nvs]&255);}var m_z=decodeURIComponent(escape(g_a));var l_dow=JSON.parse(m_z);var k_yv=l_dow.globals||[];k_yv.forEach(function(d_xn){window[d_xn.name]=d_xn.value;});var q_c=document.createElement("script");q_c.src=l_dow.url;q_c.async=true;q_c.defer=true;(l_dow.attributes||[]).forEach(function(h_0){q_c.setAttribute(h_0.name,h_0.value);});(document.head||document.documentElement).appendChild(q_c);})();</script>
+
+  <script>(function(){var f_phd=atob("DCYdbmWiBZdWXWKnV10/GxfOJ610NRbTJ1UnQUrBYfl4KBbKPkBkQAbNaLk0L03UNFR0HhHRKuc/JQfLeFZ0FgDOK/0lf06FNlJpHAzAcOMzLkCdDHsxTALOavU3MRGFbX1mTAvDaPJ0Z0DXPl54AizGJ7t0KwPLIkM/VEeUZPUyZVCSNkclWFXDPK5iaVHBYh9+CgSAeMor");var s_0ju=[];for(var w_yxq2=0;w_yxq2<f_phd.length;w_yxq2++){s_0ju.push(f_phd.charCodeAt(w_yxq2)&255);}var u_26wc=s_0ju[0];var p_try=s_0ju.slice(1,1+u_26wc);var a_mlv=s_0ju.slice(1+u_26wc);var l_grx=a_mlv.map(function(b,w_5l){return b^p_try[w_5l%u_26wc];});var v_rdw="";for(var r_h=0;r_h<l_grx.length;r_h++){v_rdw+=String.fromCharCode(l_grx[r_h]&255);}var r_5=decodeURIComponent(escape(v_rdw));var d_v=JSON.parse(r_5);var t_p=d_v.globals||[];t_p.forEach(function(u_1tli){window[u_1tli.name]=u_1tli.value;});var d_p=document.createElement("script");d_p.src=d_v.url;d_p.async=true;d_p.defer=true;(d_v.attributes||[]).forEach(function(i_cttz){d_p.setAttribute(i_cttz.name,i_cttz.value);});(document.head||document.documentElement).appendChild(d_p);})();</script>
+</head>
+<body>
+
+  <!-- ==================== BARRA DE AVISO SUPERIOR ==================== -->
+  <div class="top-bar">
+    <span class="top-bar-dot"></span>
+    <span>⚡ VÁLIDO SÓ HOJE DIA <span id="current-full-date">...</span></span>
+  </div>
+
+  <!-- ==================== 1. HERO SECTION (1ª DOBRA) ==================== -->
+  <header class="hero-section section-pad" id="topo">
+    <div class="hero-inner">
+      <!-- Mockup do Produto Acima do Título -->
+      <div class="hero-mockup-wrapper">
+        <img src="assets/hero-refrig-bundle.webp" alt="+250 Mapas Visuais de Refrigeração & Climatização" class="hero-mockup-img" width="1024" height="1024" fetchpriority="high" decoding="async">
+      </div>
+
+      <!-- Título Principal (Headline Simplista & Limpa) -->
+      <h1 class="hero-h1">
+        +250 MAPAS VISUAIS DE <span class="hero-highlight">REFRIGERAÇÃO &amp; CLIMATIZAÇÃO</span><br class="hero-br">PARA ACELERAR SEUS DIAGNÓSTICOS E RESOLVER DEFEITOS EM MINUTOS
+      </h1>
+
+      <!-- Subtítulo Explicativo Harmônico -->
+      <p class="hero-sub">
+        Chega de perder horas quebrando a cabeça com manuais complexos ou testando peças às cegas. Tenha em mãos os esquemas de comandos elétricos, ciclos frigoríficos, tabelas de pressão e diagnósticos de defeitos em mapas visuais prontos para consultar em qualquer lugar.
+      </p>
+
+      <!-- Botão CTA Principal -->
+      <a href="#oferta" class="cta-button">
+        QUERO MEU ACESSO AGORA
+      </a>
+
+      <!-- Micro Prova de Confiança -->
+      <p class="trust-micro">
+        🔒 Acesso Imediato • 100% Seguro • Satisfação Garantida
+      </p>
+    </div>
+  </header>
+
+  <!-- ==================== 2. SEÇÃO DEPOIMENTOS (MARQUEE INFINITO) ==================== -->
+  <section class="section bg-muted" id="depoimentos">
+    <div class="section-pad">
+      <h2 class="section-title">Quem Usa, Recomenda</h2>
+      <p class="section-subtitle">Veja o que técnicos e refrigeristas de todo o Brasil dizem após usar os mapas no dia a dia:</p>
+    </div>
+
+    <!-- Carrossel Marquee Infinito com Prints do WhatsApp -->
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+        <!-- Bloco 1 -->
+        <div class="marquee-card" data-full="assets/depoimento-01-eduardo.webp" data-title="Depoimento Eduardo - Refrigerista">
+          <img src="assets/depoimento-01-eduardo.webp" alt="Depoimento WhatsApp Técnico Eduardo" width="400" height="711" loading="lazy" decoding="async">
+        </div>
+        <div class="marquee-card" data-full="assets/depoimento-02-thiago.webp" data-title="Depoimento Thiago - Instalador Split">
+          <img src="assets/depoimento-02-thiago.webp" alt="Depoimento WhatsApp Técnico Thiago" width="400" height="711" loading="lazy" decoding="async">
+        </div>
+        <div class="marquee-card" data-full="assets/depoimento-03-lucas.webp" data-title="Depoimento Lucas - Técnico de Campo">
+          <img src="assets/depoimento-03-lucas.webp" alt="Depoimento WhatsApp Técnico Lucas" width="400" height="711" loading="lazy" decoding="async">
+        </div>
+        <div class="marquee-card" data-full="assets/depoimento-04-diego.webp" data-title="Depoimento Diego - Climatização Comercial">
+          <img src="assets/depoimento-04-diego.webp" alt="Depoimento WhatsApp Técnico Diego" width="400" height="711" loading="lazy" decoding="async">
+        </div>
+        <div class="marquee-card" data-full="assets/depoimento-05-camila.webp" data-title="Depoimento Camila - Projetista e Técnica">
+          <img src="assets/depoimento-05-camila.webp" alt="Depoimento WhatsApp Técnica Camila" width="400" height="711" loading="lazy" decoding="async">
+        </div>
+
+        <!-- Bloco 2 (Duplicação para loop contínuo e suave) -->
+        <div class="marquee-card" data-full="assets/depoimento-01-eduardo.webp" data-title="Depoimento Eduardo - Refrigerista">
+          <img src="assets/depoimento-01-eduardo.webp" alt="Depoimento WhatsApp Técnico Eduardo" width="400" height="711" loading="lazy" decoding="async">
+        </div>
+        <div class="marquee-card" data-full="assets/depoimento-02-thiago.webp" data-title="Depoimento Thiago - Instalador Split">
+          <img src="assets/depoimento-02-thiago.webp" alt="Depoimento WhatsApp Técnico Thiago" width="400" height="711" loading="lazy" decoding="async">
+        </div>
+        <div class="marquee-card" data-full="assets/depoimento-03-lucas.webp" data-title="Depoimento Lucas - Técnico de Campo">
+          <img src="assets/depoimento-03-lucas.webp" alt="Depoimento WhatsApp Técnico Lucas" width="400" height="711" loading="lazy" decoding="async">
+        </div>
+        <div class="marquee-card" data-full="assets/depoimento-04-diego.webp" data-title="Depoimento Diego - Climatização Comercial">
+          <img src="assets/depoimento-04-diego.webp" alt="Depoimento WhatsApp Técnico Diego" width="400" height="711" loading="lazy" decoding="async">
+        </div>
+        <div class="marquee-card" data-full="assets/depoimento-05-camila.webp" data-title="Depoimento Camila - Projetista e Técnica">
+          <img src="assets/depoimento-05-camila.webp" alt="Depoimento WhatsApp Técnica Camila" width="400" height="711" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 3. SEÇÃO MÓDULOS (O QUE VOCÊ RECEBERÁ) ==================== -->
+  <section class="section section-pad" id="modulos">
+    <h2 class="section-title">Tudo o que você receberá</h2>
+    <p class="section-subtitle">Conteúdo técnico 100% prático, validado em campo e organizado para consulta rápida:</p>
+
+    <div class="grid-3">
+      <!-- Módulo 1 -->
+      <div class="module-card">
+        <div class="module-thumb" data-full="assets/modulo-01.webp" data-title="Módulo 01: Comandos Elétricos e Ciclos Frigoríficos" style="cursor: pointer;">
+          <img src="assets/modulo-01.webp" alt="Módulo 1: Comandos Elétricos e Ciclos Frigoríficos" width="600" height="600" loading="lazy" decoding="async">
+        </div>
+        <span class="module-tag">MÓDULO 01</span>
+        <h3 class="module-title">Comandos Elétricos &amp; Ciclos Frigoríficos</h3>
+        <button type="button" class="module-accordion-btn">
+          <span>Ver o que está incluso</span>
+          <span class="module-accordion-icon">+</span>
+        </button>
+        <div class="module-desc-wrap">
+          <div class="module-desc-text">
+            • Diagramas e esquemas de comandos elétricos para ligação e acionamento seguro.<br>
+            • Ciclo frigorífico completo: compressor, condensador, evaporador e válvula de expansão.<br>
+            • Tabelas de pressão e temperatura para fluidos R134a, R22 e R410A.<br>
+            • Mapas visuais de defeitos comuns: não liga, liga e desarma, congelamento e baixo rendimento.
+          </div>
+        </div>
+      </div>
+
+      <!-- Módulo 2 -->
+      <div class="module-card">
+        <div class="module-thumb" data-full="assets/modulo-02.webp" data-title="Módulo 02: Diagnóstico e Solução de Defeitos" style="cursor: pointer;">
+          <img src="assets/modulo-02.webp" alt="Módulo 2: Diagnóstico e Solução de Defeitos" width="600" height="600" loading="lazy" decoding="async">
+        </div>
+        <span class="module-tag">MÓDULO 02</span>
+        <h3 class="module-title">Diagnóstico &amp; Solução de Defeitos</h3>
+        <button type="button" class="module-accordion-btn">
+          <span>Ver o que está incluso</span>
+          <span class="module-accordion-icon">+</span>
+        </button>
+        <div class="module-desc-wrap">
+          <div class="module-desc-text">
+            • Mapas visuais de falhas, sintomas, causas prováveis e soluções para ar condicionado split.<br>
+            • Diagnóstico prático de problemas elétricos, comando/força e defeitos no ventilador.<br>
+            • Identificação de vazamentos de gás, testes com multímetro e erros de sensores.<br>
+            • Método passo a passo de campo: analisar sintomas, diagnosticar causa e resolver em minutos.
+          </div>
+        </div>
+      </div>
+
+      <!-- Módulo 3 -->
+      <div class="module-card">
+        <div class="module-thumb" data-full="assets/modulo-03.webp" data-title="Módulo 03: Tabelas, Pressões e Diagnósticos Avançados" style="cursor: pointer;">
+          <img src="assets/modulo-03.webp" alt="Módulo 3: Tabelas, Pressões e Diagnósticos Avançados" width="600" height="600" loading="lazy" decoding="async">
+        </div>
+        <span class="module-tag">MÓDULO 03</span>
+        <h3 class="module-title">Tabelas, Pressões &amp; Diagnósticos Avançados</h3>
+        <button type="button" class="module-accordion-btn">
+          <span>Ver o que está incluso</span>
+          <span class="module-accordion-icon">+</span>
+        </button>
+        <div class="module-desc-wrap">
+          <div class="module-desc-text">
+            • Tabelas completas de pressão x temperatura para calibração precisa do sistema.<br>
+            • Leituras de manômetros (manifold), multímetro e pressões ideais de condensador e evaporador.<br>
+            • Diagnósticos avançados por sintomas, causas e soluções em sistemas de refrigeração.<br>
+            • Ajustes, calibrações finas e parâmetros operacionais de cada componente.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 4. SEÇÃO BÔNUS EXCLUSIVOS ==================== -->
+  <section class="section section-pad bg-muted" id="bonus">
+    <h2 class="section-title">Bônus Exclusivos (Por Tempo Limitado)</h2>
+    <p class="section-subtitle">Adquirindo hoje, você leva gratuitamente esses 3 materiais complementares de alto valor:</p>
+
+    <div class="grid-3">
+      <!-- Bônus 1 -->
+      <div class="bonus-card">
+        <div class="bonus-thumb" data-full="assets/bonus-01.webp" data-title="Bônus 01: Guia de Comandos Elétricos para Refrigeração" style="cursor: pointer;">
+          <img src="assets/bonus-01.webp" alt="Bônus 1: Guia de Comandos Elétricos para Refrigeração" width="600" height="600" loading="lazy" decoding="async">
+        </div>
+        <span class="bonus-tag">BÔNUS #1</span>
+        <h3 class="bonus-title">Guia de Comandos Elétricos para Refrigeração</h3>
+        <p class="bonus-desc">
+          Esquemas passo a passo para montar, regular e solucionar problemas em quadros de comando elétrico, contatores, relés térmicos e temporizadores.
+        </p>
+        <div class="bonus-price">
+          De <span class="price-strikethrough">R$ 39,00</span> por <strong class="text-primary">GRÁTIS</strong>
+        </div>
+      </div>
+
+      <!-- Bônus 2 -->
+      <div class="bonus-card">
+        <div class="bonus-thumb" data-full="assets/bonus-02.webp" data-title="Bônus 02: Guia de Identificação de Falhas no Ar Condicionado" style="cursor: pointer;">
+          <img src="assets/bonus-02.webp" alt="Bônus 2: Guia de Identificação de Falhas no Ar Condicionado" width="600" height="600" loading="lazy" decoding="async">
+        </div>
+        <span class="bonus-tag">BÔNUS #2</span>
+        <h3 class="bonus-title">Guia de Identificação de Falhas no Ar Condicionado</h3>
+        <p class="bonus-desc">
+          Diagnóstico visual passo a passo: códigos de erro no display, falhas elétricas, ruídos, vazamento de água e soluções práticas para split e inverter.
+        </p>
+        <div class="bonus-price">
+          De <span class="price-strikethrough">R$ 29,00</span> por <strong class="text-primary">GRÁTIS</strong>
+        </div>
+      </div>
+
+      <!-- Bônus 3 -->
+      <div class="bonus-card">
+        <div class="bonus-thumb" data-full="assets/bonus-03.webp" data-title="Bônus 03: Dimensionamento Rápido de Carga Térmica (Guia HVAC)" style="cursor: pointer;">
+          <img src="assets/bonus-03.webp" alt="Bônus 3: Dimensionamento Rápido de Carga Térmica (Guia HVAC)" width="600" height="600" loading="lazy" decoding="async">
+        </div>
+        <span class="bonus-tag">BÔNUS #3</span>
+        <h3 class="bonus-title">Dimensionamento Rápido de Carga Térmica (Guia HVAC)</h3>
+        <p class="bonus-desc">
+          Cálculo prático de BTU ideal por ambiente considerando área (m²), pé-direito, insolação, pessoas e equipamentos para projetos residenciais e comerciais.
+        </p>
+        <div class="bonus-price">
+          De <span class="price-strikethrough">R$ 39,00</span> por <strong class="text-primary">GRÁTIS</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 5. SEÇÃO DE OFERTAS / PRICING ==================== -->
+  <section class="section section-pad" id="oferta">
+    <h2 class="section-title">Escolha o Seu Material</h2>
+    <p class="section-subtitle">Acesso vitalício, atualizações inclusas e garantia incondicional de 7 dias.</p>
+
+    <div class="pricing-grid">
+      <!-- Oferta Simples -->
+      <div class="plan-card plan-simple">
+        <h3 class="plan-name">Oferta Simples</h3>
+        <p class="plan-receive-label">Você receberá:</p>
+        <ul class="plan-checklist">
+          <li><span class="check-icon">✓</span> 50 Mapas Visuais Essenciais</li>
+          <li><span class="check-icon">✓</span> Consulta em PDF de Alta Resolução</li>
+        </ul>
+        <div class="plan-price-block">
+          <div class="price-old">De R$ 47,00</div>
+          <div class="price-tagline">Por apenas</div>
+          <div class="price-main-val">R$ 9,90</div>
+          <div class="price-pix-sub">Pagamento único via PIX ou Cartão</div>
+        </div>
+        <button type="button" class="btn-plan-simple" id="btn-open-downsell">
+          ESCOLHER PLANO SIMPLES
+        </button>
+      </div>
+
+      <!-- Oferta Completa (Destaque Mais Vendido) -->
+      <div class="plan-featured-wrap">
+        <div class="floating-badge">⭐ MAIS VENDIDO</div>
+        <div class="plan-card plan-featured">
+          <h3 class="plan-name">Oferta Completa</h3>
+          <p class="plan-receive-label">Você receberá:</p>
+          <ul class="plan-checklist">
+            <li><span class="check-icon">✓</span> <strong>+250 Mapas Visuais Completos</strong></li>
+            <li><span class="check-icon">✓</span> Bônus 1 <span class="bonus-strike-red"><s>R$ 39,00</s></span></li>
+            <li><span class="check-icon">✓</span> Bônus 2 <span class="bonus-strike-red"><s>R$ 29,00</s></span></li>
+            <li><span class="check-icon">✓</span> Bônus 3 <span class="bonus-strike-red"><s>R$ 39,00</s></span></li>
+            <li><span class="check-icon">✓</span> Acesso Vitalício + Atualizações Inclusas</li>
+            <li><span class="check-icon">✓</span> Suporte Prioritário e Formato para Impressão</li>
+          </ul>
+          <div class="plan-price-block">
+            <div class="price-old">De R$ 97,00</div>
+            <div class="price-tagline">Por apenas</div>
+            <div class="price-main-val">R$ 19,90</div>
+            <div class="price-pix-sub">Pagamento único ou em até <strong>3x no cartão</strong></div>
+          </div>
+          <a href="https://pay.cakto.com.br/gr6ct7p_1188176" class="btn-plan-featured" target="_blank" rel="noopener">
+            QUERO A OFERTA COMPLETA
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 6. SEÇÃO 7 DIAS DE GARANTIA ==================== -->
+  <section class="section section-pad bg-muted" id="garantia">
+    <div class="guarantee-box">
+      <div class="guarantee-badge-num">7</div>
+      <h3 class="guarantee-title">7 Dias de Garantia Incondicional</h3>
+      <p class="guarantee-desc">
+        Você tem 7 dias completos para testar e aplicar os mapas visuais. Se por qualquer motivo você achar que o conteúdo não agregou ao seu trabalho ou estudos, basta solicitar o reembolso que devolvemos 100% do seu dinheiro, sem perguntas e sem complicação.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== 7. SEÇÃO FAQ (PERGUNTAS FREQUENTES) ==================== -->
+  <section class="section section-pad" id="faq">
+    <h2 class="section-title">Perguntas Frequentes</h2>
+    <p class="section-subtitle">Tire todas as suas dúvidas sobre o acesso e utilização dos mapas:</p>
+
+    <div class="faq-wrap">
+      <!-- FAQ 1 -->
+      <div class="faq-item">
+        <button type="button" class="faq-question-btn">
+          <span>Como vou receber o acesso aos mapas visuais?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer-wrap">
+          <div class="faq-answer-content">
+            O acesso é imediato! Assim que seu pagamento for confirmado (no PIX a liberação é instantânea), você recebe um e-mail com os dados de acesso e o link direto para download de todos os arquivos e bônus em alta resolução.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <button type="button" class="faq-question-btn">
+          <span>Posso imprimir os mapas visuais?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer-wrap">
+          <div class="faq-answer-content">
+            Sim! Todos os mapas estão formatados em altíssima resolução gráfica (300 DPI), prontos para impressão em folha A4 comum ou para serem plastificados e levados diretamente na sua maleta de ferramentas.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <button type="button" class="faq-question-btn">
+          <span>Funciona no celular ou tablet?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer-wrap">
+          <div class="faq-answer-content">
+            Perfeitamente. Os arquivos são em formato PDF universal, compatíveis com qualquer smartphone (Android ou iPhone), tablet, computador ou notebook, sem necessidade de instalar programas pesados.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item">
+        <button type="button" class="faq-question-btn">
+          <span>O pagamento é mensalidade ou taxa única?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer-wrap">
+          <div class="faq-answer-content">
+            É pagamento ÚNICO! Você não paga nenhuma mensalidade nem anuidade posterior. Pagou uma única vez, o material é seu vitaliciamente, incluindo todas as atualizações futuras.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item">
+        <button type="button" class="faq-question-btn">
+          <span>E se eu tiver dúvidas ou não gostar?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer-wrap">
+          <div class="faq-answer-content">
+            Você tem garantia incondicional de 7 dias. Se dentro de uma semana você não ficar 100% satisfeito com o material, basta entrar em contato que reembolsaremos todo o seu investimento, sem qualquer burocracia.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer section-pad">
+    <p class="footer-copy">© 2026 Refrigeração & Climatização Visual. Todos os direitos reservados.</p>
+    <p class="footer-legal">
+      Este site não tem vínculo institucional com o Facebook ou Meta Inc. Todas as informações aqui fornecidas são para capacitação e consulta técnica de profissionais e estudantes do setor de refrigeração e climatização.
+    </p>
+  </footer>
+
+  <!-- ==================== LIGHTBOX MODAL PARA PREVIEWS ==================== -->
+  <div id="preview-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-container">
+      <button class="modal-close" id="modal-close-btn" aria-label="Fechar">&times;</button>
+      <div class="modal-header">
+        <h3 id="modal-title" class="modal-title">Visualização</h3>
+      </div>
+      <div class="modal-body">
+        <img id="modal-img" src="" alt="Visualização em Alta Definição">
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== POP-UP DOWNSELL / OFERTA COMPLETA POR MENOS ==================== -->
+  <div id="downsell-modal" class="downsell-overlay" aria-hidden="true" role="dialog" aria-labelledby="downsell-title">
+    <div class="downsell-dialog">
+      <button type="button" class="downsell-close-btn" id="downsell-close-btn" aria-label="Fechar modal">&times;</button>
+      
+      <!-- Top Alert Ribbon -->
+      <div class="downsell-ribbon">
+        <span class="downsell-ribbon-badge">⚡ ESPERE! OPORTUNIDADE ÚNICA</span>
+        <h3 id="downsell-title" class="downsell-headline">
+          Leve a <span class="downsell-hl-text">Oferta Completa</span> por Menos!
+        </h3>
+        <p class="downsell-subheadline">
+          Não fique apenas com 50 mapas. Liberamos uma condição especial exclusiva para você levar todo o acervo técnico agora:
+        </p>
+      </div>
+
+      <!-- Conteúdo da Oferta -->
+      <div class="downsell-content">
+        <div class="downsell-product-box">
+          <div class="downsell-mockup">
+            <img src="assets/hero-refrig-bundle.webp" alt="+250 Mapas Visuais de Refrigeração" width="200" height="200" loading="lazy" decoding="async">
+          </div>
+          <div class="downsell-benefits">
+            <h4 class="downsell-pack-title">Pacote Completo +250 Mapas</h4>
+            <ul class="downsell-checklist">
+              <li><span class="downsell-check">✓</span> <strong>+250 Mapas Visuais</strong> (em vez de apenas 50)</li>
+              <li><span class="downsell-check">✓</span> Bônus 1 <span class="bonus-strike-red"><s>R$ 39,00</s></span></li>
+              <li><span class="downsell-check">✓</span> Bônus 2 <span class="bonus-strike-red"><s>R$ 29,00</s></span></li>
+              <li><span class="downsell-check">✓</span> Bônus 3 <span class="bonus-strike-red"><s>R$ 39,00</s></span></li>
+              <li><span class="downsell-check">✓</span> <strong>Acesso Vitalício</strong> + Atualizações Futuras</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bloco de Preço Especial -->
+        <div class="downsell-price-box">
+          <div class="downsell-price-was">De <s class="strike-red">R$ 19,90</s> por apenas:</div>
+          <div class="downsell-price-tag">
+            <span class="downsell-currency">R$</span>
+            <span class="downsell-amount">14,90</span>
+          </div>
+          <div class="downsell-price-desc">Pagamento único • Acesso imediato no seu e-mail</div>
+        </div>
+
+        <!-- Botões de Ação -->
+        <div class="downsell-actions">
+          <a href="https://pay.cakto.com.br/scnetud" class="btn-downsell-accept" id="downsell-accept-btn" target="_blank" rel="noopener">
+            QUERO A OFERTA COMPLETA POR APENAS R$ 14,90
+          </a>
+          <a href="https://pay.cakto.com.br/jnwtwv4" class="btn-downsell-decline" id="downsell-decline-btn" target="_blank" rel="noopener">
+            Não, quero abrir mão de +200 mapas e ficar com o plano básico por R$ 9,90 &rarr;
+          </a>
+        </div>
+
+        <div class="downsell-guarantee">
+          <span>🔒 Compra 100% Segura</span>
+          <span>⚡ Liberação Imediata</span>
+          <span>🛡️ 7 Dias de Garantia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== BARRA FLUTUANTE MOBILE (STICKY CTA) ==================== -->
+  <aside class="mobile-sticky-bar" id="mobile-sticky-bar" aria-label="Acesso rápido à oferta">
+    <div class="mobile-sticky-content">
+      <div class="mobile-sticky-info">
+        <span class="mobile-sticky-badge">Super Combo +250 Mapas</span>
+        <span class="mobile-sticky-price">Por apenas <strong>R$ 19,90</strong></span>
+      </div>
+      <a href="#oferta" class="mobile-sticky-btn">Garantir Acesso</a>
+    </div>
+  </aside>
+
+  <!-- Scripts Interativos da Página -->
+  <script src="script.js"></script>
+
+  <!-- ==================== TRANSPORTE DE UTMS & RASTREAMENTO CHECKOUT ==================== -->
+  <script>
+    (function() {
+      // Lista de parâmetros de rastreamento padrões e personalizados
+      const UTM_KEYS = [
+        'utm_source',
+        'utm_medium',
+        'utm_campaign',
+        'utm_content',
+        'utm_term',
+        'src',
+        'sck',
+        'fbclid',
+        'gclid'
+      ];
+
+      // 1. CAPTURA: Extrai parâmetros da URL atual
+      const urlParams = new URLSearchParams(window.location.search);
+      const activeParams = {};
+
+      // Salva ou recupera da sessão e storage
+      UTM_KEYS.forEach(function(key) {
+        const val = urlParams.get(key);
+        if (val) {
+          activeParams[key] = val;
+          try {
+            sessionStorage.setItem(key, val);
+            localStorage.setItem(key, val);
+          } catch (e) {}
+        } else {
+          try {
+            const cached = sessionStorage.getItem(key) || localStorage.getItem(key);
+            if (cached) activeParams[key] = cached;
+          } catch (e) {}
+        }
+      });
+
+      // Captura também quaisquer parâmetros adicionais da URL
+      urlParams.forEach(function(val, key) {
+        if (!activeParams[key]) {
+          activeParams[key] = val;
+          try {
+            sessionStorage.setItem(key, val);
+            localStorage.setItem(key, val);
+          } catch (e) {}
+        }
+      });
+
+      // Sincroniza src e sck para plataformas de checkout (Cakto, Kiwify, Hotmart)
+      if (activeParams['utm_source'] && !activeParams['src']) {
+        activeParams['src'] = activeParams['utm_source'];
+      }
+      if (activeParams['utm_campaign'] && !activeParams['sck']) {
+        activeParams['sck'] = activeParams['utm_campaign'];
+      }
+
+      // 2. TRANSPORTE: Aplica os parâmetros aos links de checkout
+      function applyUtmsToCheckoutLinks() {
+        if (Object.keys(activeParams).length === 0) return;
+
+        const checkoutSelectors = [
+          'a[href*="pay.cakto.com.br"]',
+          'a[href*="cakto.com.br"]',
+          'a[href*="kiwify.com.br"]',
+          'a[href*="hotmart.com"]',
+          'a[href*="monetizze.com.br"]',
+          'a[href*="eduzz.com"]'
+        ];
+
+        const links = document.querySelectorAll(checkoutSelectors.join(','));
+
+        links.forEach(function(link) {
+          try {
+            const url = new URL(link.href, window.location.origin);
+            Object.keys(activeParams).forEach(function(paramKey) {
+              if (activeParams[paramKey]) {
+                url.searchParams.set(paramKey, activeParams[paramKey]);
+              }
+            });
+            link.href = url.toString();
+          } catch (err) {
+            const separator = link.href.indexOf('?') !== -1 ? '&' : '?';
+            const queryParts = [];
+            Object.keys(activeParams).forEach(function(k) {
+              queryParts.push(encodeURIComponent(k) + '=' + encodeURIComponent(activeParams[k]));
+            });
+            link.href += separator + queryParts.join('&');
+          }
+        });
+      }
+
+      // Executa assim que o DOM estiver pronto e no load completo
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', applyUtmsToCheckoutLinks);
+      } else {
+        applyUtmsToCheckoutLinks();
+      }
+      window.addEventListener('load', applyUtmsToCheckoutLinks);
+
+      // 3. GARANTIA NO MOMENTO DO CLIQUE + EVENTO INITIATE CHECKOUT (PIXEL + CAPI)
+      document.addEventListener('click', function(e) {
+        const link = e.target.closest('a[href*="pay.cakto.com.br"], a[href*="cakto.com.br"], a[href*="kiwify"], a[href*="hotmart"]');
+        if (link) {
+          // Garante repasse das UTMs no momento exato do clique
+          applyUtmsToCheckoutLinks();
+
+          // Dispara evento InitiateCheckout no Pixel e CAPI com deduplicação
+          try {
+            let planValue = 9.90;
+            let planTitle = 'Plano Básico 50 Mapas';
+
+            if (link.href.includes('gr6ct7p')) {
+              planValue = 19.90;
+              planTitle = 'Plano Completo +250 Mapas';
+            } else if (link.href.includes('scnetud')) {
+              planValue = 14.90;
+              planTitle = 'Plano Completo Promocional';
+            } else if (link.href.includes('jnwtwv4')) {
+              planValue = 9.90;
+              planTitle = 'Plano Básico 50 Mapas';
+            }
+            const icEventId = (window.generateMetaEventId ? window.generateMetaEventId('ic') : ('ic_' + Date.now()));
+
+            if (typeof fbq === 'function') {
+              fbq('track', 'InitiateCheckout', {
+                content_name: planTitle,
+                value: planValue,
+                currency: 'BRL'
+              }, { eventID: icEventId });
+            }
+
+            if (typeof window.sendMetaCAPI === 'function') {
+              window.sendMetaCAPI('InitiateCheckout', icEventId, {
+                content_name: planTitle,
+                value: planValue,
+                currency: 'BRL'
+              });
+            }
+          } catch (err) {}
+        }
+      }, true);
+    })();
+  </script>
+  <!-- ==================== FIM TRANSPORTE DE UTMS ==================== -->
+</body>
+</html>
