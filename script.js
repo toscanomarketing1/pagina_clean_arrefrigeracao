@@ -72,15 +72,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalTitle) {
       modalTitle.textContent = titleText || 'Depoimento de Aluno';
     }
+    modal.style.display = 'flex';
+    modal.removeAttribute('aria-hidden');
+    modal.removeAttribute('inert');
     modal.classList.add('active');
-    modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
 
   function closePreview() {
     if (!modal) return;
     modal.classList.remove('active');
+    modal.style.display = 'none';
     modal.setAttribute('aria-hidden', 'true');
+    modal.setAttribute('inert', '');
     document.body.style.overflow = '';
   }
 
@@ -141,15 +145,19 @@ document.addEventListener('DOMContentLoaded', () => {
   function openDownsell(e) {
     if (e) e.preventDefault();
     if (!downsellModal) return;
+    downsellModal.style.display = 'flex';
+    downsellModal.removeAttribute('aria-hidden');
+    downsellModal.removeAttribute('inert');
     downsellModal.classList.add('active');
-    downsellModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
 
   function closeDownsell() {
     if (!downsellModal) return;
     downsellModal.classList.remove('active');
+    downsellModal.style.display = 'none';
     downsellModal.setAttribute('aria-hidden', 'true');
+    downsellModal.setAttribute('inert', '');
     document.body.style.overflow = '';
   }
 

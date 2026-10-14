@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "Mapas Visuais de Refrigeração e Climatização",
+  "description": "+250 esquemas visuais, comandos elétricos, ciclos frigoríficos e diagnósticos práticos para refrigeração e climatização.",
+  "url": "https://pagina-clean-arrefrigacao.pages.dev",
+  "version": "1.0.0",
+  "provider": {
+    "name": "Refrigeração & Climatização Visual",
+    "url": "https://pagina-clean-arrefrigacao.pages.dev"
+  }
+}
