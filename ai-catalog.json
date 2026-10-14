@@ -1,11 +1,16 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "name": "Mapas Visuais de Refrigeração e Climatização",
-  "description": "+250 esquemas visuais, comandos elétricos, ciclos frigoríficos e diagnósticos práticos para refrigeração e climatização.",
-  "url": "https://pagina-clean-arrefrigacao.pages.dev",
-  "version": "1.0.0",
-  "provider": {
-    "name": "Refrigeração & Climatização Visual",
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Refrigeração e Climatização Visual",
     "url": "https://pagina-clean-arrefrigacao.pages.dev"
-  }
+  },
+  "entries": [
+    {
+      "id": "refrigeracao-mapas-visuais",
+      "displayName": "+250 Mapas Visuais de Refrigeração e Climatização",
+      "description": "Acervo completo com mais de 250 mapas visuais, diagramas de comandos elétricos, ciclos frigoríficos e diagnósticos de defeitos.",
+      "type": "documentation",
+      "url": "https://pagina-clean-arrefrigacao.pages.dev/llms.txt"
+    }
+  ]
 }

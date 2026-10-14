@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://pagina-clean-arrefrigacao.pages.dev/llms.txt
+Agentmap: https://pagina-clean-arrefrigacao.pages.dev/ai-catalog.json
