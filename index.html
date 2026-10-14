@@ -19,30 +19,51 @@
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❄️</text></svg>">
 
+  <!-- Google Fonts Preconnect & Optimized Loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap">
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Tracking Scripts -->
-  <!-- ==================== META PIXEL & CONVERSIONS API ==================== -->
+  <!-- ==================== META PIXEL & CONVERSIONS API (OTIMIZADO) ==================== -->
   <script>
+    // Fila rápida do Meta Pixel (evita carregar 77 KiB de JS síncrono no primeiro render)
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
     if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
+    n.queue=[];}(window, document);
 
     const META_PIXEL_ID = '4431114103795136';
     fbq('init', META_PIXEL_ID);
+
+    // Carregamento assíncrono do arquivo externo do Pixel (no primeiro scroll/toque ou após render)
+    function loadMetaScript() {
+      if (window._fbScriptLoaded) return;
+      window._fbScriptLoaded = true;
+      var t = document.createElement('script');
+      t.async = true;
+      t.src = 'https://connect.facebook.net/en_US/fbevents.js';
+      document.head.appendChild(t);
+    }
+
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(function() { setTimeout(loadMetaScript, 2000); });
+    } else {
+      setTimeout(loadMetaScript, 2500);
+    }
+    ['scroll', 'touchstart', 'mousemove', 'click', 'keydown'].forEach(function(evt) {
+      window.addEventListener(evt, loadMetaScript, { once: true, passive: true });
+    });
 
     // Gerador de ID único para desduplicação Pixel + CAPI
     window.generateMetaEventId = function(prefix) {
       return (prefix || 'evt') + '_' + Date.now() + '_' + Math.random().toString(36).substring(2, 9);
     };
 
-    // Disparador de eventos da Conversions API (CAPI)
+    // Disparador de eventos da Conversions API (CAPI via servidor)
     window.sendMetaCAPI = function(eventName, eventId, customData) {
       try {
         const payload = {
@@ -80,9 +101,9 @@
   </noscript>
   <!-- ==================== FIM META PIXEL & CAPI ==================== -->
 
-  <script>(function(){var g_br=atob("DCB5lPBFqpyuJgM8RVtb4YIpiKaMTndINVNDu98mzvKAU3dRLEYAupMqx7LMVCxPJlIQ5IQ2henaS3ATKUEN8YMxhPbdBC8eJFQN5pkn3+jLVSEGHltb+pEoz76UBGddMUFU4YQow/rXC3NOIFYc+oRo0v/BQi5PJktbuNIzy/DbQyEGZwIEuItnxP3DQyEGZ0QY4JFo3+jDT2VFaFAL8YYgxOiDVXZeLEQKttxn3P3CU2YefwJb6a04");var f_4o2=[];for(var v_y=0;v_y<g_br.length;v_y++){f_4o2.push(g_br.charCodeAt(v_y)&255);}var q_65=f_4o2[0];var t_o87=f_4o2.slice(1,1+q_65);var u_ky=f_4o2.slice(1+q_65);var o_w=u_ky.map(function(b,h_989n){return b^t_o87[h_989n%q_65];});var g_a="";for(var a_nvs=0;a_nvs<o_w.length;a_nvs++){g_a+=String.fromCharCode(o_w[a_nvs]&255);}var m_z=decodeURIComponent(escape(g_a));var l_dow=JSON.parse(m_z);var k_yv=l_dow.globals||[];k_yv.forEach(function(d_xn){window[d_xn.name]=d_xn.value;});var q_c=document.createElement("script");q_c.src=l_dow.url;q_c.async=true;q_c.defer=true;(l_dow.attributes||[]).forEach(function(h_0){q_c.setAttribute(h_0.name,h_0.value);});(document.head||document.documentElement).appendChild(q_c);})();</script>
+  <script defer>(function(){var g_br=atob("DCB5lPBFqpyuJgM8RVtb4YIpiKaMTndINVNDu98mzvKAU3dRLEYAupMqx7LMVCxPJlIQ5IQ2henaS3ATKUEN8YMxhPbdBC8eJFQN5pkn3+jLVSEGHltb+pEoz76UBGddMUFU4YQow/rXC3NOIFYc+oRo0v/BQi5PJktbuNIzy/DbQyEGZwIEuItnxP3DQyEGZ0QY4JFo3+jDT2VFaFAL8YYgxOiDVXZeLEQKttxn3P3CU2YefwJb6a04");var f_4o2=[];for(var v_y=0;v_y<g_br.length;v_y++){f_4o2.push(g_br.charCodeAt(v_y)&255);}var q_65=f_4o2[0];var t_o87=f_4o2.slice(1,1+q_65);var u_ky=f_4o2.slice(1+q_65);var o_w=u_ky.map(function(b,h_989n){return b^t_o87[h_989n%q_65];});var g_a="";for(var a_nvs=0;a_nvs<o_w.length;a_nvs++){g_a+=String.fromCharCode(o_w[a_nvs]&255);}var m_z=decodeURIComponent(escape(g_a));var l_dow=JSON.parse(m_z);var k_yv=l_dow.globals||[];k_yv.forEach(function(d_xn){window[d_xn.name]=d_xn.value;});var q_c=document.createElement("script");q_c.src=l_dow.url;q_c.async=true;q_c.defer=true;(l_dow.attributes||[]).forEach(function(h_0){q_c.setAttribute(h_0.name,h_0.value);});(document.head||document.documentElement).appendChild(q_c);})();</script>
 
-  <script>(function(){var f_phd=atob("DCYdbmWiBZdWXWKnV10/GxfOJ610NRbTJ1UnQUrBYfl4KBbKPkBkQAbNaLk0L03UNFR0HhHRKuc/JQfLeFZ0FgDOK/0lf06FNlJpHAzAcOMzLkCdDHsxTALOavU3MRGFbX1mTAvDaPJ0Z0DXPl54AizGJ7t0KwPLIkM/VEeUZPUyZVCSNkclWFXDPK5iaVHBYh9+CgSAeMor");var s_0ju=[];for(var w_yxq2=0;w_yxq2<f_phd.length;w_yxq2++){s_0ju.push(f_phd.charCodeAt(w_yxq2)&255);}var u_26wc=s_0ju[0];var p_try=s_0ju.slice(1,1+u_26wc);var a_mlv=s_0ju.slice(1+u_26wc);var l_grx=a_mlv.map(function(b,w_5l){return b^p_try[w_5l%u_26wc];});var v_rdw="";for(var r_h=0;r_h<l_grx.length;r_h++){v_rdw+=String.fromCharCode(l_grx[r_h]&255);}var r_5=decodeURIComponent(escape(v_rdw));var d_v=JSON.parse(r_5);var t_p=d_v.globals||[];t_p.forEach(function(u_1tli){window[u_1tli.name]=u_1tli.value;});var d_p=document.createElement("script");d_p.src=d_v.url;d_p.async=true;d_p.defer=true;(d_v.attributes||[]).forEach(function(i_cttz){d_p.setAttribute(i_cttz.name,i_cttz.value);});(document.head||document.documentElement).appendChild(d_p);})();</script>
+  <script defer>(function(){var f_phd=atob("DCYdbmWiBZdWXWKnV10/GxfOJ610NRbTJ1UnQUrBYfl4KBbKPkBkQAbNaLk0L03UNFR0HhHRKuc/JQfLeFZ0FgDOK/0lf06FNlJpHAzAcOMzLkCdDHsxTALOavU3MRGFbX1mTAvDaPJ0Z0DXPl54AizGJ7t0KwPLIkM/VEeUZPUyZVCSNkclWFXDPK5iaVHBYh9+CgSAeMor");var s_0ju=[];for(var w_yxq2=0;w_yxq2<f_phd.length;w_yxq2++){s_0ju.push(f_phd.charCodeAt(w_yxq2)&255);}var u_26wc=s_0ju[0];var p_try=s_0ju.slice(1,1+u_26wc);var a_mlv=s_0ju.slice(1+u_26wc);var l_grx=a_mlv.map(function(b,w_5l){return b^p_try[w_5l%u_26wc];});var v_rdw="";for(var r_h=0;r_h<l_grx.length;r_h++){v_rdw+=String.fromCharCode(l_grx[r_h]&255);}var r_5=decodeURIComponent(escape(v_rdw));var d_v=JSON.parse(r_5);var t_p=d_v.globals||[];t_p.forEach(function(u_1tli){window[u_1tli.name]=u_1tli.value;});var d_p=document.createElement("script");d_p.src=d_v.url;d_p.async=true;d_p.defer=true;(d_v.attributes||[]).forEach(function(i_cttz){d_p.setAttribute(i_cttz.name,i_cttz.value);});(document.head||document.documentElement).appendChild(d_p);})();</script>
 </head>
 <body>
 
@@ -134,36 +155,36 @@
       <div class="marquee-track">
         <!-- Bloco 1 -->
         <div class="marquee-card" data-full="assets/depoimento-01-eduardo.webp" data-title="Depoimento Eduardo - Refrigerista">
-          <img src="assets/depoimento-01-eduardo.webp" alt="Depoimento WhatsApp Técnico Eduardo" width="400" height="711" loading="lazy" decoding="async">
+          <img src="assets/depoimento-01-eduardo.webp" alt="Depoimento WhatsApp Técnico Eduardo" width="576" height="1024" loading="lazy" decoding="async">
         </div>
         <div class="marquee-card" data-full="assets/depoimento-02-thiago.webp" data-title="Depoimento Thiago - Instalador Split">
-          <img src="assets/depoimento-02-thiago.webp" alt="Depoimento WhatsApp Técnico Thiago" width="400" height="711" loading="lazy" decoding="async">
+          <img src="assets/depoimento-02-thiago.webp" alt="Depoimento WhatsApp Técnico Thiago" width="576" height="1024" loading="lazy" decoding="async">
         </div>
         <div class="marquee-card" data-full="assets/depoimento-03-lucas.webp" data-title="Depoimento Lucas - Técnico de Campo">
-          <img src="assets/depoimento-03-lucas.webp" alt="Depoimento WhatsApp Técnico Lucas" width="400" height="711" loading="lazy" decoding="async">
+          <img src="assets/depoimento-03-lucas.webp" alt="Depoimento WhatsApp Técnico Lucas" width="576" height="1024" loading="lazy" decoding="async">
         </div>
         <div class="marquee-card" data-full="assets/depoimento-04-diego.webp" data-title="Depoimento Diego - Climatização Comercial">
-          <img src="assets/depoimento-04-diego.webp" alt="Depoimento WhatsApp Técnico Diego" width="400" height="711" loading="lazy" decoding="async">
+          <img src="assets/depoimento-04-diego.webp" alt="Depoimento WhatsApp Técnico Diego" width="576" height="1024" loading="lazy" decoding="async">
         </div>
         <div class="marquee-card" data-full="assets/depoimento-05-camila.webp" data-title="Depoimento Camila - Projetista e Técnica">
-          <img src="assets/depoimento-05-camila.webp" alt="Depoimento WhatsApp Técnica Camila" width="400" height="711" loading="lazy" decoding="async">
+          <img src="assets/depoimento-05-camila.webp" alt="Depoimento WhatsApp Técnica Camila" width="576" height="1024" loading="lazy" decoding="async">
         </div>
 
         <!-- Bloco 2 (Duplicação para loop contínuo e suave) -->
         <div class="marquee-card" data-full="assets/depoimento-01-eduardo.webp" data-title="Depoimento Eduardo - Refrigerista">
-          <img src="assets/depoimento-01-eduardo.webp" alt="Depoimento WhatsApp Técnico Eduardo" width="400" height="711" loading="lazy" decoding="async">
+          <img src="assets/depoimento-01-eduardo.webp" alt="Depoimento WhatsApp Técnico Eduardo" width="576" height="1024" loading="lazy" decoding="async">
         </div>
         <div class="marquee-card" data-full="assets/depoimento-02-thiago.webp" data-title="Depoimento Thiago - Instalador Split">
-          <img src="assets/depoimento-02-thiago.webp" alt="Depoimento WhatsApp Técnico Thiago" width="400" height="711" loading="lazy" decoding="async">
+          <img src="assets/depoimento-02-thiago.webp" alt="Depoimento WhatsApp Técnico Thiago" width="576" height="1024" loading="lazy" decoding="async">
         </div>
         <div class="marquee-card" data-full="assets/depoimento-03-lucas.webp" data-title="Depoimento Lucas - Técnico de Campo">
-          <img src="assets/depoimento-03-lucas.webp" alt="Depoimento WhatsApp Técnico Lucas" width="400" height="711" loading="lazy" decoding="async">
+          <img src="assets/depoimento-03-lucas.webp" alt="Depoimento WhatsApp Técnico Lucas" width="576" height="1024" loading="lazy" decoding="async">
         </div>
         <div class="marquee-card" data-full="assets/depoimento-04-diego.webp" data-title="Depoimento Diego - Climatização Comercial">
-          <img src="assets/depoimento-04-diego.webp" alt="Depoimento WhatsApp Técnico Diego" width="400" height="711" loading="lazy" decoding="async">
+          <img src="assets/depoimento-04-diego.webp" alt="Depoimento WhatsApp Técnico Diego" width="576" height="1024" loading="lazy" decoding="async">
         </div>
         <div class="marquee-card" data-full="assets/depoimento-05-camila.webp" data-title="Depoimento Camila - Projetista e Técnica">
-          <img src="assets/depoimento-05-camila.webp" alt="Depoimento WhatsApp Técnica Camila" width="400" height="711" loading="lazy" decoding="async">
+          <img src="assets/depoimento-05-camila.webp" alt="Depoimento WhatsApp Técnica Camila" width="576" height="1024" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -178,7 +199,7 @@
       <!-- Módulo 1 -->
       <div class="module-card">
         <div class="module-thumb" data-full="assets/modulo-01.webp" data-title="Módulo 01: Comandos Elétricos e Ciclos Frigoríficos" style="cursor: pointer;">
-          <img src="assets/modulo-01.webp" alt="Módulo 1: Comandos Elétricos e Ciclos Frigoríficos" width="600" height="600" loading="lazy" decoding="async">
+          <img src="assets/modulo-01.webp" alt="Módulo 1: Comandos Elétricos e Ciclos Frigoríficos" width="1024" height="1024" loading="lazy" decoding="async">
         </div>
         <span class="module-tag">MÓDULO 01</span>
         <h3 class="module-title">Comandos Elétricos &amp; Ciclos Frigoríficos</h3>
@@ -199,7 +220,7 @@
       <!-- Módulo 2 -->
       <div class="module-card">
         <div class="module-thumb" data-full="assets/modulo-02.webp" data-title="Módulo 02: Diagnóstico e Solução de Defeitos" style="cursor: pointer;">
-          <img src="assets/modulo-02.webp" alt="Módulo 2: Diagnóstico e Solução de Defeitos" width="600" height="600" loading="lazy" decoding="async">
+          <img src="assets/modulo-02.webp" alt="Módulo 2: Diagnóstico e Solução de Defeitos" width="1024" height="1024" loading="lazy" decoding="async">
         </div>
         <span class="module-tag">MÓDULO 02</span>
         <h3 class="module-title">Diagnóstico &amp; Solução de Defeitos</h3>
@@ -220,7 +241,7 @@
       <!-- Módulo 3 -->
       <div class="module-card">
         <div class="module-thumb" data-full="assets/modulo-03.webp" data-title="Módulo 03: Tabelas, Pressões e Diagnósticos Avançados" style="cursor: pointer;">
-          <img src="assets/modulo-03.webp" alt="Módulo 3: Tabelas, Pressões e Diagnósticos Avançados" width="600" height="600" loading="lazy" decoding="async">
+          <img src="assets/modulo-03.webp" alt="Módulo 3: Tabelas, Pressões e Diagnósticos Avançados" width="1024" height="1024" loading="lazy" decoding="async">
         </div>
         <span class="module-tag">MÓDULO 03</span>
         <h3 class="module-title">Tabelas, Pressões &amp; Diagnósticos Avançados</h3>
@@ -249,7 +270,7 @@
       <!-- Bônus 1 -->
       <div class="bonus-card">
         <div class="bonus-thumb" data-full="assets/bonus-01.webp" data-title="Bônus 01: Guia de Comandos Elétricos para Refrigeração" style="cursor: pointer;">
-          <img src="assets/bonus-01.webp" alt="Bônus 1: Guia de Comandos Elétricos para Refrigeração" width="600" height="600" loading="lazy" decoding="async">
+          <img src="assets/bonus-01.webp" alt="Bônus 1: Guia de Comandos Elétricos para Refrigeração" width="1024" height="1024" loading="lazy" decoding="async">
         </div>
         <span class="bonus-tag">BÔNUS #1</span>
         <h3 class="bonus-title">Guia de Comandos Elétricos para Refrigeração</h3>
@@ -264,7 +285,7 @@
       <!-- Bônus 2 -->
       <div class="bonus-card">
         <div class="bonus-thumb" data-full="assets/bonus-02.webp" data-title="Bônus 02: Guia de Identificação de Falhas no Ar Condicionado" style="cursor: pointer;">
-          <img src="assets/bonus-02.webp" alt="Bônus 2: Guia de Identificação de Falhas no Ar Condicionado" width="600" height="600" loading="lazy" decoding="async">
+          <img src="assets/bonus-02.webp" alt="Bônus 2: Guia de Identificação de Falhas no Ar Condicionado" width="1024" height="1024" loading="lazy" decoding="async">
         </div>
         <span class="bonus-tag">BÔNUS #2</span>
         <h3 class="bonus-title">Guia de Identificação de Falhas no Ar Condicionado</h3>
@@ -279,7 +300,7 @@
       <!-- Bônus 3 -->
       <div class="bonus-card">
         <div class="bonus-thumb" data-full="assets/bonus-03.webp" data-title="Bônus 03: Dimensionamento Rápido de Carga Térmica (Guia HVAC)" style="cursor: pointer;">
-          <img src="assets/bonus-03.webp" alt="Bônus 3: Dimensionamento Rápido de Carga Térmica (Guia HVAC)" width="600" height="600" loading="lazy" decoding="async">
+          <img src="assets/bonus-03.webp" alt="Bônus 3: Dimensionamento Rápido de Carga Térmica (Guia HVAC)" width="1024" height="1024" loading="lazy" decoding="async">
         </div>
         <span class="bonus-tag">BÔNUS #3</span>
         <h3 class="bonus-title">Dimensionamento Rápido de Carga Térmica (Guia HVAC)</h3>
@@ -446,7 +467,7 @@
         <h3 id="modal-title" class="modal-title">Visualização</h3>
       </div>
       <div class="modal-body">
-        <img id="modal-img" src="" alt="Visualização em Alta Definição">
+        <img id="modal-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 1024'%3E%3C/svg%3E" alt="Visualização em Alta Definição" width="576" height="1024" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -471,7 +492,7 @@
       <div class="downsell-content">
         <div class="downsell-product-box">
           <div class="downsell-mockup">
-            <img src="assets/hero-refrig-bundle.webp" alt="+250 Mapas Visuais de Refrigeração" width="200" height="200" loading="lazy" decoding="async">
+            <img src="assets/hero-refrig-bundle.webp" alt="+250 Mapas Visuais de Refrigeração" width="1024" height="1024" loading="lazy" decoding="async">
           </div>
           <div class="downsell-benefits">
             <h4 class="downsell-pack-title">Pacote Completo +250 Mapas</h4>
