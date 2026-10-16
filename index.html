@@ -98,7 +98,7 @@
         fb.src = 'https://connect.facebook.net/en_US/fbevents.js';
         document.head.appendChild(fb);
 
-        // UTMify Scripts
+        // UTMify Scripts (preservação de parâmetros UTM nas URLs)
         try {
           var utm1 = document.createElement('script');
           utm1.async = true;
@@ -106,12 +106,6 @@
           utm1.setAttribute('data-utmify-prevent-xcod-sck', '');
           utm1.setAttribute('data-utmify-prevent-subids', '');
           document.head.appendChild(utm1);
-
-          window.pixelId = '6abd825aa860a99443f59cda';
-          var utm2 = document.createElement('script');
-          utm2.async = true;
-          utm2.src = 'https://cdn.utmify.com.br/scripts/pixel/pixel.js';
-          document.head.appendChild(utm2);
         } catch (e) {}
       }
 
