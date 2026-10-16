@@ -1365,23 +1365,31 @@ a {
   color: #FFFFFF;
 }
 
+.btn-downsell-simple,
 .btn-downsell-decline {
-  font-size: 0.78rem;
-  color: #1E293B;
-  text-decoration: underline;
-  padding: 6px 10px;
-  cursor: pointer;
-  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   background: transparent;
-  border: none;
-  line-height: 1.35;
-  text-decoration-color: #64748B;
-  font-weight: 500;
+  color: #0284C7;
+  border: 2px solid #0284C7;
+  padding: 13px 18px;
+  border-radius: var(--radius);
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
 }
 
+.btn-downsell-simple:hover,
 .btn-downsell-decline:hover {
-  color: #0284C7;
-  text-decoration-color: #0284C7;
+  background: #0284C7;
+  color: #FFFFFF;
 }
 
 .downsell-guarantee {
@@ -1704,9 +1712,13 @@ a {
     border-radius: 8px !important;
   }
 
+  .btn-downsell-simple,
   .btn-downsell-decline {
-    font-size: 0.74rem !important;
-    padding: 6px 4px !important;
+    min-height: 48px !important;
+    padding: 12px 14px !important;
+    font-size: 0.84rem !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
   }
 
   .downsell-guarantee {

@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnOpenDownsell = document.getElementById('btn-open-downsell');
   const downsellModal = document.getElementById('downsell-modal');
   const downsellCloseBtn = document.getElementById('downsell-close-btn');
-  const downsellDeclineBtn = document.getElementById('downsell-decline-btn');
+  const downsellDeclineBtn = document.getElementById('downsell-decline-btn') || document.getElementById('downsell-simple-btn');
   const downsellAcceptBtn = document.getElementById('downsell-accept-btn');
 
   function openDownsell(e) {
