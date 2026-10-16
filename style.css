@@ -1538,9 +1538,8 @@ a {
     gap: 32px !important;
   }
 
-  /* No mobile, coloca a Oferta Completa em destaque superior */
+  /* No mobile, Plano Simples vem primeiro, seguido da Oferta Completa */
   .plan-featured-wrap {
-    order: -1 !important;
     margin-top: 14px !important;
   }
 
