@@ -195,43 +195,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 7. Barra Flutuante Mobile (Sticky Bar) com ativação suave no scroll
-  const stickyBar = document.getElementById('mobile-sticky-bar');
-  const ofertaSection = document.getElementById('oferta');
-
-  if (stickyBar) {
-    let ticking = false;
-    const handleStickyScroll = () => {
-      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-      let inOfferRange = false;
-
-      if (ofertaSection) {
-        const rect = ofertaSection.getBoundingClientRect();
-        if (rect.top <= window.innerHeight * 0.75 && rect.bottom >= 50) {
-          inOfferRange = true;
-        }
-      }
-
-      if (window.innerWidth <= 768 && scrollY > 320 && !inOfferRange) {
-        stickyBar.classList.add('is-visible');
-      } else {
-        stickyBar.classList.remove('is-visible');
-      }
-      ticking = false;
-    };
-
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        window.requestAnimationFrame(handleStickyScroll);
-        ticking = true;
-      }
-    }, { passive: true });
-
-    window.addEventListener('resize', () => {
-      if (!ticking) {
-        window.requestAnimationFrame(handleStickyScroll);
-        ticking = true;
-      }
-    }, { passive: true });
-  }
 });
